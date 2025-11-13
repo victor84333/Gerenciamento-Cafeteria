@@ -31,6 +31,7 @@ int main(void) {
         printf("3) Registrar pedido\n");
         printf("4) Listar pedidos\n");
         printf("5) Salvar produtos\n");
+        
         printf("0) Sair\n");
         printf("Escolha: ");
 

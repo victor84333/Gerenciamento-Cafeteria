@@ -42,5 +42,6 @@ void     liberarProdutos(Produto *lista);
 Pedido*  registrarPedido(Pedido *lista, Produto *lista_produtos, int *proximo_id_pedido);
 void     listarPedidos(Pedido *lista);
 void     liberarPedidos(Pedido *lista);
+Produto* excluirProduto(Produto *lista, int id);
 
 #endif

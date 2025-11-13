@@ -121,7 +121,7 @@ Produto* cadastrarProduto(Produto *lista, int *proximo_id_produto) {
         it->proximo = p;
     }
 
-    printf("✅ Produto cadastrado! ID: %d | %s | R$ %.2f | Estoque: %d\n",
+    printf("Produto cadastrado! ID: %d | %s | R$ %.2f | Estoque: %d\n",
            p->id, p->nome, p->preco, p->estoque);
     return lista;
 }
@@ -157,7 +157,7 @@ void liberarProdutos(Produto *lista) {
 
 Pedido* registrarPedido(Pedido *lista, Produto *lista_produtos, int *proximo_id_pedido) {
     if (!lista_produtos) {
-        printf("\n❌ Não há produtos cadastrados para vender.\n");
+        printf("\nNão há produtos cadastrados para vender.\n");
         return lista;
     }
 
@@ -193,7 +193,7 @@ Pedido* registrarPedido(Pedido *lista, Produto *lista_produtos, int *proximo_id_
 
         Produto *p = buscarProdutoPorId(lista_produtos, id_prod);
         if (!p) {
-            printf("❌ Produto ID %d não encontrado.\n", id_prod);
+            printf("Produto ID %d não encontrado.\n", id_prod);
             continue;
         }
 
@@ -204,7 +204,7 @@ Pedido* registrarPedido(Pedido *lista, Produto *lista_produtos, int *proximo_id_
             continue;
         }
         if (qtd > p->estoque) {
-            printf("❌ Estoque insuficiente. Disponível: %d.\n", p->estoque);
+            printf("Estoque insuficiente. Disponível: %d.\n", p->estoque);
             continue;
         }
 
@@ -213,7 +213,7 @@ Pedido* registrarPedido(Pedido *lista, Produto *lista_produtos, int *proximo_id_
         float subtotal = p->preco * qtd;
         novo->valor_total += subtotal;
 
-        printf("✔ %d x %s adicionados. Subtotal: R$ %.2f | Estoque restante: %d\n",
+        printf("%d x %s adicionados. Subtotal: R$ %.2f | Estoque restante: %d\n",
                qtd, p->nome, subtotal, p->estoque);
     }
 
@@ -227,7 +227,7 @@ Pedido* registrarPedido(Pedido *lista, Produto *lista_produtos, int *proximo_id_
     novo->proximo = lista;
     lista = novo;
 
-    printf("\n✅ Pedido registrado! ID: %d | Cliente: %s | Total: R$ %.2f\n",
+    printf("\nPedido registrado! ID: %d | Cliente: %s | Total: R$ %.2f\n",
            novo->id, novo->cliente, novo->valor_total);
 
 
